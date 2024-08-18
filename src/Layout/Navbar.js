@@ -22,7 +22,7 @@ const Navbar = ({ isVisible }) => {
 
   return (
     <motion.nav
-      className={`navbar navbar-expand-lg bg-body-tertiary fixed-top ${isVisible || scrollingDown ? 'navbar-shown' : 'navbar-hidden'}`}
+      className={`navbar navbar-expand-lg bg-body-tertiary ${isVisible || scrollingDown ? 'navbar-shown' : 'navbar-hidden'}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -36,6 +36,9 @@ const Navbar = ({ isVisible }) => {
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <a className="nav-link" href="#about">About</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#technology">Technologies</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#contact">Contact</a>

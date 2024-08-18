@@ -8,6 +8,7 @@ class Welcome extends Component {
     this.state = {
       showDescription: false,
       textVisible: true,
+      isAtTop: true,
     };
   }
 
@@ -24,10 +25,11 @@ class Welcome extends Component {
   }
 
   handleScroll = () => {
-    if (window.scrollY <= 100 && !this.state.textVisible) {
-      this.setState({ textVisible: true });
-    } else if (window.scrollY > 100 && this.state.textVisible) {
-      this.setState({ textVisible: false });
+    const { isAtTop } = this.state;
+    if (window.scrollY <= 100 && !this.state.textVisible && isAtTop) {
+      this.setState({ textVisible: true, isAtTop : false });
+    } else if (window.scrollY > 100 && this.state.textVisible && !isAtTop) {
+      this.setState({ textVisible: false, isAtTop: true });
     }
   };
 
@@ -38,6 +40,8 @@ class Welcome extends Component {
 
   render() {
     const { showDescription, textVisible } = this.state;
+    const initial = { opacity: 0, y: 50 }
+    const animate = { opacity: 1, y: 0 }
 
     return (
       <div style={{ position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
@@ -45,17 +49,17 @@ class Welcome extends Component {
           <>
             <motion.h2
               style={{ fontSize: '50px', textAlign: 'center' }}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={initial}
+              animate={animate}
               transition={{ duration: 1 }}
             >
-              Hi, I am Mohd Arfat
+              Hello, My Name is Mohd Arfat
             </motion.h2>
             {showDescription && (
               <motion.h2
                 style={{ fontSize: '30px', textAlign: 'center', marginTop: '10px' }}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={initial}
+                animate={animate}
                 transition={{ duration: 1, delay: 1 }}
               >
                 Software Development Engineer

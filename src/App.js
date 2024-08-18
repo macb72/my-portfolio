@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Welcome from './Components/Welcome';
 import Navbar from './Layout/Navbar';
+import Technology from './Components/Technology';
+import ContactForm from './Components/ContactForm';
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +14,7 @@ class App extends Component {
   }
 
   handleLearnMoreClick = () => {
-    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('technology').scrollIntoView({ behavior: 'smooth' });
     this.setState({ showNavbar: true });
   };
 
@@ -36,19 +38,26 @@ class App extends Component {
 
   render() {
     const { showNavbar } = this.state;
-
     return (
       <div className='App-background' style={{ position: 'relative' }}>
         <Navbar isVisible={showNavbar} />
         <Welcome onLearnMoreClick={this.handleLearnMoreClick} />
-        <section id="about" style={{ height: '100vh', padding: '20px' }}>
-          <h2>About</h2>
-          <p>This is the About section.</p>
-        </section>
-        <section id="contact" style={{ height: '100vh', padding: '20px' }}>
-          <h2>Contact Me</h2>
-          <p>This is the Contact Me section.</p>
-        </section>
+        <div style={{ height: '100vh', padding: '20px' }}>
+          <section id="about">
+            <h2>About</h2>
+            <p>This is the About section.</p>
+          </section>
+          <br />
+          <br />
+          <section id="technology"  >
+            <Technology />
+          </section>
+          <br />
+          <br />
+          <section id="contact" >
+            <ContactForm />
+          </section>
+        </div>
       </div>
     );
   }
