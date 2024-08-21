@@ -34,7 +34,7 @@ class Welcome extends Component {
   };
 
   handleLearnMoreClick = () => {
-    this.setState({ textVisible: false });
+    // this.setState({ textVisible: false });
     this.props.onLearnMoreClick();
   };
 

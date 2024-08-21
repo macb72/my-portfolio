@@ -22,7 +22,7 @@ const Navbar = ({ isVisible }) => {
 
   return (
     <motion.nav
-      className={`navbar navbar-expand-lg bg-body-tertiary ${isVisible || scrollingDown ? 'navbar-shown' : 'navbar-hidden'}`}
+    className={`navbar navbar-expand-lg bg-body-tertiary fixed-top ${isVisible || scrollingDown ? 'navbar-shown' : 'navbar-hidden'}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}

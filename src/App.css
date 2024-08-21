@@ -201,3 +201,44 @@
 .honeypot {
   display: none; /* Hide honeypot field from view */
 }
+
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+  border-color: red;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.875rem;
+}
+
+.submit-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.submit-button:disabled {
+  background-color: #cccccc;
+}
+
+.social-media {
+  margin-top: 1rem;
+}
+
+.social-media a {
+  margin-right: 0.5rem;
+}
+
+.social-media img {
+  width: 24px; /* Adjust size as needed */
+  height: 24px;
+}

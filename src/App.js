@@ -3,6 +3,8 @@ import Welcome from './Components/Welcome';
 import Navbar from './Layout/Navbar';
 import Technology from './Components/Technology';
 import ContactForm from './Components/ContactForm';
+import About from './Components/About';
+import WorkExp from './Components/WorkExp';
 
 class App extends Component {
   constructor(props) {
@@ -44,8 +46,12 @@ class App extends Component {
         <Welcome onLearnMoreClick={this.handleLearnMoreClick} />
         <div style={{ height: '100vh', padding: '20px' }}>
           <section id="about">
-            <h2>About</h2>
-            <p>This is the About section.</p>
+            <About />
+          </section>
+          <br />
+          <br />
+          <section id="work-experience">
+            <WorkExp />
           </section>
           <br />
           <br />
