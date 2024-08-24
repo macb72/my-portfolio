@@ -1,0 +1,94 @@
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.custom-card {
+    position: relative;
+    border-radius: 8px;
+    height: 550px;
+    width: 360px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.custom-card .upper-box {
+    background-color: #1877F2; /* Adjusted to match your company's primary color */
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+}
+
+.custom-card .company-name {
+    margin: 0;
+}
+
+.custom-card .logo-container {
+    position: absolute;
+    top: 100px; /* Adjust to control how much of the logo appears in the upper and lower boxes */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #ffffff; /* Ensure it matches the background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.custom-card .logo {
+    height: 100%; 
+    width: auto; 
+    object-fit: cover; /* Ensures the logo fills the container without distortion */
+}
+
+.custom-card .lower-box {
+    background-color: #ffffff;
+    padding: 60px 20px 20px; /* Top padding accounts for the overlap of the logo */
+    text-align: center;
+}
+
+.custom-card .lower-box h4 {
+    color: #333333;
+    margin: 0;
+    font-size: 1.4em;
+}
+
+.custom-card .lower-box h6 {
+    color: #666666;
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.custom-card .lower-box p {
+    color: #666666;
+    font-size: 0.95em;
+    margin: 10px 0;
+}
+
+.custom-card .highlights {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+    color: #666666;
+    font-size: 0.95em;
+}
+
+.custom-card .highlights li {
+    margin-bottom: 5px;
+}

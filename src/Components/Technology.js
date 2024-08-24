@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../src/App.css'; // Make sure to import the CSS file
+import '../Styles/Technology.css'; //
 
 const technologies = [
   { src: '/mongodb.png', alt: 'MongoDB', url: 'https://www.mongodb.com', name: 'MongoDB' },

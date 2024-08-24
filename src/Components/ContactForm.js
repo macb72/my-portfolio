@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import '../Styles/ContactForm.scss'; // Adjust path as necessary
+
 // import "./SocialMedia.scss";
 
 const ContactForm = () => {

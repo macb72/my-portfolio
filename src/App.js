@@ -5,6 +5,7 @@ import Technology from './Components/Technology';
 import ContactForm from './Components/ContactForm';
 import About from './Components/About';
 import WorkExp from './Components/WorkExp';
+import ScrollProgressBar from './Components/ScrollProgressBar';
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class App extends Component {
   }
 
   handleLearnMoreClick = () => {
-    document.getElementById('technology').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
     this.setState({ showNavbar: true });
   };
 
@@ -44,26 +45,28 @@ class App extends Component {
       <div className='App-background' style={{ position: 'relative' }}>
         <Navbar isVisible={showNavbar} />
         <Welcome onLearnMoreClick={this.handleLearnMoreClick} />
-        <div style={{ height: '100vh', padding: '20px' }}>
+        {/* <div style={{ height: '100vh', padding: '20px' }}>
+          
+        </div> */}
+        <div style={{ display: 'flex', flexDirection: 'column' }} >
           <section id="about">
+            <br/>
             <About />
           </section>
-          <br />
-          <br />
+
           <section id="work-experience">
+            <h3 className='text-center mb-4'>Experiences</h3>
             <WorkExp />
           </section>
-          <br />
-          <br />
           <section id="technology"  >
+            <br/>
             <Technology />
           </section>
-          <br />
-          <br />
-          <section id="contact" >
-            <ContactForm />
-          </section>
         </div>
+        <section id="contact" >
+          <br/>
+          <ContactForm />
+        </section>
       </div>
     );
   }

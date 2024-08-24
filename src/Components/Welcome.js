@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { motion } from 'framer-motion';
 import { FaAngleDoubleDown } from 'react-icons/fa';
+import '../Styles/Welcome.css'; // Import the CSS for styling
 
 class Welcome extends Component {
   constructor(props) {
@@ -27,14 +28,13 @@ class Welcome extends Component {
   handleScroll = () => {
     const { isAtTop } = this.state;
     if (window.scrollY <= 100 && !this.state.textVisible && isAtTop) {
-      this.setState({ textVisible: true, isAtTop : false });
+      this.setState({ textVisible: true, isAtTop: false });
     } else if (window.scrollY > 100 && this.state.textVisible && !isAtTop) {
       this.setState({ textVisible: false, isAtTop: true });
     }
   };
 
   handleLearnMoreClick = () => {
-    // this.setState({ textVisible: false });
     this.props.onLearnMoreClick();
   };
 
@@ -44,38 +44,38 @@ class Welcome extends Component {
     const animate = { opacity: 1, y: 0 }
 
     return (
-      <div style={{ position: 'relative', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <div className="welcome-container">
         {textVisible && (
           <>
-            <motion.h2
-              style={{ fontSize: '50px', textAlign: 'center' }}
+            <motion.h1
+              className="welcome-heading"
               initial={initial}
               animate={animate}
               transition={{ duration: 1 }}
             >
-              Hello, My Name is Mohd Arfat
-            </motion.h2>
+              Hello, I'm Mohd Arfat!
+            </motion.h1>
             {showDescription && (
               <motion.h2
-                style={{ fontSize: '30px', textAlign: 'center', marginTop: '10px' }}
+                className="welcome-subheading"
                 initial={initial}
                 animate={animate}
-                transition={{ duration: 1, delay: 1 }}
+                transition={{ duration: 1, delay: 0.5 }}
               >
-                Software Development Engineer
+                I create stunning websites with MERN Stack
               </motion.h2>
             )}
           </>
         )}
-        <span style={{ position:"absolute", bottom:'10%'}}> <motion.div
-          style={{ fontSize: '30px', marginTop: '20px', display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+        <motion.div
+          className="scroll-down-icon"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, delay: 1 }}
           onClick={this.handleLearnMoreClick}
         >
-          <FaAngleDoubleDown style={{ marginLeft: '10px' }} />
-        </motion.div> </span>
+          <FaAngleDoubleDown />
+        </motion.div>
       </div>
     );
   }
